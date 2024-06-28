@@ -1,0 +1,7 @@
+Aquí se desarrollará toda la parte del cliente, incluyendo:
+
+    Componentes y Vistas: Desarrolla los componentes y vistas de tu aplicación utilizando React (o el framework frontend que prefieras).
+
+    Estilos: Implementa estilos CSS o utiliza bibliotecas como Bootstrap o Material UI para diseñar la interfaz de usuario.
+
+    Interacción con el Backend: Conecta tu frontend con el backend a través de las API endpoints para enviar y recibir datos.
