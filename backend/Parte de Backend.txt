@@ -1,0 +1,9 @@
+En esta carpeta deberás desarrollar toda la lógica del lado del servidor, incluyendo:
+
+    Configuración del Framework: Si estás utilizando Django, configura tu entorno virtual y configura tu proyecto Django aquí.
+
+    Modelos y Base de Datos: Define los modelos de datos necesarios para tu aplicación y configura la conexión con la base de datos (por ejemplo, PostgreSQL).
+
+    API Endpoints: Crea las API endpoints que necesitará tu frontend para interactuar con el backend.
+
+    Lógica de Negocio: Implementa la lógica principal de tu aplicación, como algoritmos de optimización de precios, integración con la API de eBay, etc.

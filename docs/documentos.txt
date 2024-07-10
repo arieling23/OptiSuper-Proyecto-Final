@@ -1,0 +1,7 @@
+Esta carpeta debería contener toda la documentación relevante para tu proyecto:
+
+    Manuales de Usuario: Describe cómo usar la aplicación desde el punto de vista del usuario final.
+
+    Especificaciones Técnicas: Incluye diagramas de arquitectura, esquemas de base de datos, y cualquier detalle técnico relevante.
+
+    Guías de Instalación: Instrucciones paso a paso para configurar el entorno de desarrollo y despliegue de la aplicación.

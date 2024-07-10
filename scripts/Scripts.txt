@@ -1,0 +1,5 @@
+Puedes incluir scripts útiles aquí, como:
+
+    Migraciones de Base de Datos: Scripts para manejar migraciones de base de datos si estás utilizando un ORM como Django ORM.
+
+    Automatización de Tareas: Scripts para automatizar tareas repetitivas durante el desarrollo o mantenimiento de la aplicación.
