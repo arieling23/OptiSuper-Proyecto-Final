@@ -1,0 +1,30 @@
+footer {
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .footer-section {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .auth-buttons {
+    display: flex;
+  }
+  
+  .auth-buttons .signup, .auth-buttons .signin {
+    margin: 0 10px;
+  }
+  

@@ -1,0 +1,40 @@
+/* Products.css */
+
+.products {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .products h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .product-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .product-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .product-card p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  
