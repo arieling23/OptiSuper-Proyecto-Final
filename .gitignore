@@ -1,0 +1,15 @@
+node_modules
+# Archivos de entorno virtual
+env/
+
+# Base de datos local
+db.sqlite3
+
+# Archivos de registro
+*.log
+
+# Archivos de byte compilado de Python
+*.pyc
+__pycache__/
+# Excluir el entorno virtual
+backend/env/

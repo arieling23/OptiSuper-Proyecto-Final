@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = (userData) => {
     setUser(userData);
-    localStorage.setItem('authToken', userData.access);  // Guarda el token en localStorage
+    localStorage.setItem('authToken', userData.access );  // Guarda el token en localStorage
   };
 
   const logout = () => {
