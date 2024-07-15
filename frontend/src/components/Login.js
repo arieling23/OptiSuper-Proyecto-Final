@@ -1,26 +1,39 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la navegación
-import { loginUser } from '../api'; // Asegúrate de que la ruta sea correcta
+// src/components/Login.js
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../api';
+import { AuthContext } from '../context/AuthContext';
 import './Login.css';
 import logo from '../images/logo1.jpg';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // Utiliza useNavigate para la navegación
+  const [error, setError] = useState('');
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!username || !password) {
+      setError('All fields are required.');
+      return;
+    }
     try {
-      await loginUser(username, password);
-      // Puedes redirigir al usuario a otra página o mostrar un mensaje de éxito aquí
+      const userData = await loginUser(username, password);
+      login(userData);
+      navigate('/optimize');
     } catch (error) {
-      // Maneja el error (por ejemplo, mostrar un mensaje de error)
+      if (error.response && error.response.data) {
+        setError('Login failed. Please try again.');
+      } else {
+        setError('Login failed. Please try again.');
+      }
     }
   };
 
   const handleBackToHome = () => {
-    navigate('/'); // Navega a la página de inicio
+    navigate('/');
   };
 
   return (
@@ -28,13 +41,14 @@ const Login = () => {
       <div className="login-form">
         <img src={logo} alt="OptiSuper Logo" className="login-logo" />
         <h1>Sign in</h1>
+        {error && <div className="error">{error}</div>}
         <form onSubmit={handleSubmit}>
           <label>
-            Email
+            Username
             <input
-              type="email"
-              name="email"
-              placeholder="example.email@gmail.com"
+              type="text"
+              name="username"
+              placeholder="Enter your username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -45,20 +59,16 @@ const Login = () => {
             <input
               type="password"
               name="password"
-              placeholder="Enter at least 8+ characters"
+              placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </label>
-          <label>
-            <input type="checkbox" name="remember" />
-            Remember me
-          </label>
           <button type="submit">Sign in</button>
         </form>
-        <a href="/forgot-password">Forgot password?</a>
-        <p>Or sign in with</p>
+        <a href="/reset_password">Forgot password?</a>
+        <p>Don't have an account? <a href="/signup">Sign up</a></p>
         <div className="social-login">
           <button className="google">G</button>
           <button className="facebook">f</button>
@@ -67,7 +77,7 @@ const Login = () => {
         <button onClick={handleBackToHome} className="back-to-home">Back to Home</button>
       </div>
       <div className="login-image">
-        <img src={require('../images/machinelearning.jpg')} alt="Happy customer" />
+        <img src="path_to_your_image.jpg" alt="Happy customer" />
       </div>
     </div>
   );

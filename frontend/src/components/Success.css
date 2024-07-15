@@ -1,0 +1,47 @@
+.success-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.success-message {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 400px;
+}
+
+.success-message h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: green;
+}
+
+.success-message p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.success-message a {
+    color: #6200ea;
+    text-decoration: none;
+}
+
+.success-message a:hover {
+    text-decoration: underline;
+}
+
+.back-to-home {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}

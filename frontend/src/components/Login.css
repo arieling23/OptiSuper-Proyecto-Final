@@ -34,7 +34,7 @@
     margin-bottom: 10px;
 }
 
-.login-form input[type="email"],
+.login-form input[type="text"],
 .login-form input[type="password"] {
     font-size: 1em;
     padding: 10px;
@@ -103,6 +103,7 @@
     color: #fff;
     transform: scale(1.05);
 }
+
 .back-to-home {
     margin-top: 20px;
     padding: 10px 20px;
@@ -112,5 +113,4 @@
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
-  }
-  
+}

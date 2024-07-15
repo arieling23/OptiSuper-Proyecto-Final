@@ -1,33 +1,48 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la navegación
-import { registerUser } from '../api'; // Asegúrate de que la ruta sea correcta
+import { useNavigate } from 'react-router-dom';
+import { registerUser } from '../api';
 import './SignUp.css';
 import logo from '../images/logo1.jpg';
 
 const SignUp = () => {
-  const [first_name, setFirstName] = useState('');
-  const [last_name, setLastName] = useState('');
+  const [username, setUsername] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Utiliza useNavigate para la navegación
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!first_name || !last_name || !email || !password) {
+    if (!username || !firstName || !lastName || !email || !password || !confirmPassword) {
       setError('All fields are required.');
       return;
     }
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.');
+      return;
+    }
     try {
-      await registerUser(first_name, last_name, email, password);
-      // Puedes redirigir al usuario a otra página o mostrar un mensaje de éxito aquí
+      await registerUser(username, firstName, lastName, email, password, confirmPassword);
+      navigate('/success');
     } catch (error) {
-      setError('Registration failed. Please try again.');
+      if (error.response && error.response.data) {
+        const errorData = error.response.data.errors;
+        const errorMessage = Object.keys(errorData).map(key => {
+          const messages = Array.isArray(errorData[key]) ? errorData[key].map(item => item.message) : [errorData[key].message];
+          return `${key}: ${messages.join(' ')}`;
+        }).join(', ');
+        setError(errorMessage);
+      } else {
+        setError('Registration failed. Please try again.');
+      }
     }
   };
 
   const handleBackToHome = () => {
-    navigate('/'); // Navega a la página de inicio
+    navigate('/');
   };
 
   return (
@@ -44,15 +59,22 @@ const SignUp = () => {
           <div className="form-group">
             <input
               type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <input
+              type="text"
               placeholder="First name"
-              value={first_name}
+              value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               required
             />
             <input
               type="text"
               placeholder="Last name"
-              value={last_name}
+              value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
             />
@@ -71,10 +93,17 @@ const SignUp = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
           <div className="checkbox-container">
             <input type="checkbox" />
             <span>
-              By signing up, I agree with the <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a>
+              By signing up, I agree with the <button type="button" className="link-button">Terms of Use</button> & <button type="button" className="link-button">Privacy Policy</button>
             </span>
           </div>
           <button type="submit" className="signup-button">Sign up</button>
