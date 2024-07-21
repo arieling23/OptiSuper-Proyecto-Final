@@ -17,11 +17,11 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!username || !firstName || !lastName || !email || !password || !confirmPassword) {
-      setError('All fields are required.');
+      setError('Todos los campos son obligatorios.');
       return;
     }
     if (password !== confirmPassword) {
-      setError('Passwords do not match.');
+      setError('Las contraseñas no coinciden.');
       return;
     }
     try {
@@ -36,7 +36,7 @@ const SignUp = () => {
         }).join(', ');
         setError(errorMessage);
       } else {
-        setError('Registration failed. Please try again.');
+        setError('El registro falló. Por favor, inténtalo de nuevo.');
       }
     }
   };
@@ -49,31 +49,27 @@ const SignUp = () => {
     <div className="signup-container">
       <div className="signup-form">
         <img src={logo} alt="Logo" className="signup-logo" />
-        <h2>Sign up</h2>
+        <h2>Regístrate</h2>
         {error && <div className="error">{error}</div>}
-        <button className="social-button google">Sign up with Google</button>
-        <button className="social-button facebook">Sign up with Facebook</button>
-        <button className="social-button apple">Sign up with Apple</button>
-        <div className="divider">OR</div>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Nombre de usuario"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
             />
             <input
               type="text"
-              placeholder="First name"
+              placeholder="Nombre"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               required
             />
             <input
               type="text"
-              placeholder="Last name"
+              placeholder="Apellido"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
@@ -81,21 +77,21 @@ const SignUp = () => {
           </div>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Correo electrónico"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Contraseña"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
           <input
             type="password"
-            placeholder="Confirm Password"
+            placeholder="Confirmar contraseña"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
@@ -103,16 +99,13 @@ const SignUp = () => {
           <div className="checkbox-container">
             <input type="checkbox" />
             <span>
-              By signing up, I agree with the <button type="button" className="link-button">Terms of Use</button> & <button type="button" className="link-button">Privacy Policy</button>
+              Al registrarme, estoy de acuerdo con los <button type="button" className="link-button">Términos de uso</button> y la <button type="button" className="link-button">Política de privacidad</button>
             </span>
           </div>
-          <button type="submit" className="signup-button">Sign up</button>
+          <button type="submit" className="signup-button">Regístrate</button>
         </form>
-        <p>Already have an account? <a href="/login">Sign in</a></p>
-        <button onClick={handleBackToHome} className="back-to-home">Back to Home</button>
-      </div>
-      <div className="signup-image">
-        <img src="path_to_your_image.jpg" alt="Happy customer" />
+        <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></p>
+        <button onClick={handleBackToHome} className="back-to-home">Volver a la página principal</button>
       </div>
     </div>
   );

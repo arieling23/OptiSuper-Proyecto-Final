@@ -35,12 +35,6 @@ export const loginUser = async (username, password) => {
 };
 
 
-export const recoverUsername = async (email) => {
-  await getCsrfToken();
-  const response = await axios.post(`${API_BASE_URL}/myapp/recover-username/`, { email }, { withCredentials: true });
-  return response.data;
-};
-
 export const resetPassword = async (email) => {
   await getCsrfToken();
   const response = await axios.post(`${API_BASE_URL}/myapp/reset_password/`, { email }, { withCredentials: true });
@@ -63,4 +57,34 @@ export const verifyToken = async (token) => {
     }
   });
   return response.data;
+};
+
+export const predictPrice = async (formData) => {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/myapp/predict-price/`, formData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error predicting price:', error);
+    throw error;
+  }
+};
+
+export const predictSales = async (formData) => {
+  await getCsrfToken();
+  try {
+    const response = await axios.post(`${API_BASE_URL}/myapp/predict-sales/`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      },
+      withCredentials: true
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error en la predicción de ventas:', error.response?.data || error.message);
+    throw error;
+  }
 };

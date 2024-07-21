@@ -1,3 +1,4 @@
+/* src/components/PriceOptimization.css */
 .price-optimization-container {
     display: flex;
     flex-direction: column;
@@ -5,34 +6,54 @@
     justify-content: center;
     height: 100vh;
     background-color: #f8f9fa;
-}
-
-.optimization-form {
+  }
+  
+  .optimization-form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+  }
+  
+  .optimization-form {
     background: #fff;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-    max-width: 400px;
-    width: 100%;
-}
-
-.optimization-form label {
+    width: 45%;
+  }
+  
+  .optimization-form label {
     display: block;
     margin-bottom: 15px;
     font-size: 1em;
-}
-
-.optimization-form input {
+  }
+  
+  .optimization-form input {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-.optimization-form button {
+  }
+  
+  .optimization-form .form-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .optimization-form .form-column {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .optimization-form .form-column:last-child {
+    margin-right: 0;
+  }
+  
+  .submit-button {
     width: 100%;
     padding: 10px;
     background: #6c63ff;
@@ -42,17 +63,47 @@
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
-}
-
-.optimized-price {
-    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .submit-button.loading {
+    background-color: #f0ad4e;
+    cursor: not-allowed;
+  }
+  
+  .submit-button.success {
+    background-color: #5cb85c;
+  }
+  
+  .submit-button.error {
+    background-color: #d9534f;
+  }
+  
+  .submit-button:disabled {
+    cursor: not-allowed;
+  }
+  
+  .optimized-price {
     background: #dff0d8;
     padding: 20px;
     border-radius: 4px;
     color: #3c763d;
+    text-align: left;
+    width: 45%;
+    margin-left: 20px;
+  }
+  
+  .optimized-price h2 {
+    margin: 0 0 10px 0;
+  }
+  
+  .error-message {
+    margin-top: 20px;
+    background: #f2dede;
+    padding: 20px;
+    border-radius: 4px;
+    color: #a94442;
     text-align: center;
-}
-
-.optimized-price h2 {
-    margin: 0;
-}
+    width: 100%;
+  }
+  

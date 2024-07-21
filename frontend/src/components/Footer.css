@@ -1,30 +1,34 @@
 footer {
-    background-color: #282c34;
-    color: white;
-    padding: 20px;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .footer-section {
-    flex: 1;
-    padding: 10px;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .auth-buttons {
-    display: flex;
-  }
-  
-  .auth-buttons .signup, .auth-buttons .signin {
-    margin: 0 10px;
-  }
-  
+  background-color: #282c34;
+  color: white;
+  padding: 5px; /* Padding reducido para disminuir la altura total */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 2px; /* Padding interno reducido */
+}
+
+.footer-section p, .footer-section h4 {
+  font-size: 0.8em; /* Tamaño de fuente reducido */
+  margin-bottom: 5px; /* Espacio entre elementos reducido */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 5px; /* Padding reducido en el texto del fondo */
+}
+
+.auth-buttons {
+  display: flex;
+}
+
+.auth-buttons .signup, .auth-buttons .signin {
+  margin: 0 10px;
+}

@@ -1,4 +1,3 @@
-// src/components/Login.js
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../api';
@@ -16,7 +15,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!username || !password) {
-      setError('All fields are required.');
+      setError('Todos los campos son obligatorios.');
       return;
     }
     try {
@@ -25,9 +24,9 @@ const Login = () => {
       navigate('/optimize');
     } catch (error) {
       if (error.response && error.response.data) {
-        setError('Login failed. Please try again.');
+        setError('Error en el inicio de sesión. Por favor, inténtalo de nuevo.');
       } else {
-        setError('Login failed. Please try again.');
+        setError('Error en el inicio de sesión. Por favor, inténtalo de nuevo.');
       }
     }
   };
@@ -39,45 +38,38 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-form">
-        <img src={logo} alt="OptiSuper Logo" className="login-logo" />
-        <h1>Sign in</h1>
+        <img src={logo} alt="Logo de OptiSuper" className="login-logo" />
+        <h1>Iniciar sesión</h1>
         {error && <div className="error">{error}</div>}
         <form onSubmit={handleSubmit}>
           <label>
-            Username
+            Nombre de usuario
             <input
               type="text"
               name="username"
-              placeholder="Enter your username"
+              placeholder="Ingresa tu nombre de usuario"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
             />
           </label>
           <label>
-            Password
+            Contraseña
             <input
               type="password"
               name="password"
-              placeholder="Enter your password"
+              placeholder="Ingresa tu contraseña"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </label>
-          <button type="submit">Sign in</button>
+          <button type="submit">Iniciar sesión</button>
         </form>
-        <a href="/reset_password">Forgot password?</a>
-        <p>Don't have an account? <a href="/signup">Sign up</a></p>
-        <div className="social-login">
-          <button className="google">G</button>
-          <button className="facebook">f</button>
-          <button className="apple"></button>
-        </div>
-        <button onClick={handleBackToHome} className="back-to-home">Back to Home</button>
-      </div>
-      <div className="login-image">
-        <img src="path_to_your_image.jpg" alt="Happy customer" />
+        <a href="/reset_password">¿Olvidaste tu contraseña?</a>
+        <p>¿No tienes una cuenta? <a href="/signup">Regístrate</a></p>
+        
+        <button onClick={handleBackToHome} className="back-to-home">Volver a la página principal</button>
       </div>
     </div>
   );

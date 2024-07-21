@@ -1,4 +1,3 @@
-// src/components/Header.js
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
@@ -18,13 +17,22 @@ const Header = () => {
     <header className="header">
       <div className="logo-container">
         <img src={logo} alt="Logo" className="logo" />
-        <span className="logo-text">OPTISUPER</span>
+        <span className="logo-text">OPTIPREDICT</span>
       </div>
       <nav className="nav">
         <ul>
-          <li><Link to="/">Inicio</Link></li>
-          <li><Link to="/products">Productos</Link></li>
-          <li><Link to="/contact">Contactos</Link></li>
+          {user ? (
+            <>
+              <li><Link to="/optimize">Precio Estimado</Link></li>
+              <li><Link to="/sales-prediction">Predicción de Ventas</Link></li>
+            </>
+          ) : (
+            <>
+              <li><Link to="/">Inicio</Link></li>
+              <li><Link to="/products">Productos</Link></li>
+              <li><Link to="/contact">Contactos</Link></li>
+            </>
+          )}
         </ul>
       </nav>
       <div className="auth-buttons">
@@ -35,8 +43,8 @@ const Header = () => {
           </>
         ) : (
           <>
-            <Link to="/signup" className="signup-button">Sign Up</Link>
-            <Link to="/login" className="signin-button">Sign in</Link>
+            <Link to="/signup" className="signup-button">Regístrate</Link>
+            <Link to="/login" className="signin-button">Iniciar sesión</Link>
           </>
         )}
       </div>
