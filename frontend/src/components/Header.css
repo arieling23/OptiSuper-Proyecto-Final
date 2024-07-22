@@ -1,6 +1,6 @@
 /* src/components/Header.css */
 .header {
-  background-color: #fff;
+  background-color: hsl(0, 0%, 100%);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
@@ -14,8 +14,9 @@
 }
 
 .logo {
-  height: 40px;
-  margin-right: 10px;
+  width: 100px; 
+  height: 10px;
+  
 }
 
 .logo-text {
@@ -47,7 +48,7 @@
 }
 
 .nav ul li a:hover {
-  color: #6c63ff;
+  color: #fca311;
 }
 
 .auth-buttons {
@@ -72,12 +73,12 @@
 }
 
 .signup-button {
-  background-color: #6c63ff;
+  background-color: #fff;
   color: #fff;
 }
 
 .signup-button:hover {
-  background-color: #574bfa;
+  background-color: #fca311;
   transform: translateY(-2px);
 }
 

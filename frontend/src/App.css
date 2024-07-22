@@ -42,8 +42,8 @@
 
 /* Nuevos estilos para la cabecera */
 .header {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #14213d;
+  box-shadow: 0 2px 4px #ffffff(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,13 +56,14 @@
 }
 
 .logo {
-  height: 40px;
-  margin-right: 10px;
+  height: 100px;
+  margin-right: 50px;
 }
 
 .logo-text {
   font-size: 24px;
   font-weight: bold;
+  color: #ffffff;
 }
 
 .nav {
@@ -83,7 +84,7 @@
 
 .nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   font-size: 16px;
 }
 
@@ -94,13 +95,13 @@
 
 .signup-button, .signin-button {
   padding: 5px 10px;
-  border: 2px solid #333;
+  border: 2px solid #ffffff;
   cursor: pointer;
 }
 
 .signup-button {
   background-color: transparent;
-  color: #333;
+  color: #ffffff;
 }
 
 .signin-button {
