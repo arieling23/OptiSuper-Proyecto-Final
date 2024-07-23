@@ -50,6 +50,9 @@ const PriceOptimization = () => {
   return (
     <div className="price-optimization-container">
       <h1>Precio Estimado</h1>
+      <p className="description">
+        Complete el formulario a continuación con las especificaciones de su producto para obtener un precio estimado basado en nuestras capacidades avanzadas de inteligencia artificial.
+      </p>
       <div className="optimization-form-container">
         <form onSubmit={handleOptimize} className="optimization-form">
           <div className="form-row">
@@ -143,7 +146,7 @@ const PriceOptimization = () => {
             className={`submit-button ${isLoading ? 'loading' : ''} ${isSuccess ? 'success' : ''} ${error ? 'error' : ''}`}
             disabled={isLoading}
           >
-            {isLoading ? 'Optimizing...' : isSuccess ? 'Success!' : error ? 'Try Again' : 'Optimize Price'}
+            {isLoading ? 'Optimizing...' : isSuccess ? 'Success!' : error ? 'Try Again' : 'Optimizar Precio'}
           </button>
         </form>
         {error && (
@@ -152,10 +155,7 @@ const PriceOptimization = () => {
           </div>
         )}
         {optimizedPrice && (
-          <div className="optimized-price">
-            <h2>Precio Estimado:</h2>
-            <p>{optimizedPrice}</p>
-          </div>
+          <div className="optimized-price" dangerouslySetInnerHTML={{ __html: optimizedPrice }}></div>
         )}
       </div>
     </div>

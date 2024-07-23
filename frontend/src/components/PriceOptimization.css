@@ -1,109 +1,101 @@
-/* src/components/PriceOptimization.css */
 .price-optimization-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f8f9fa;
-  }
-  
-  .optimization-form-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-  }
-  
-  .optimization-form {
-    background: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    width: 45%;
-  }
-  
-  .optimization-form label {
-    display: block;
-    margin-bottom: 15px;
-    font-size: 1em;
-  }
-  
-  .optimization-form input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .optimization-form .form-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .optimization-form .form-column {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .optimization-form .form-column:last-child {
-    margin-right: 0;
-  }
-  
-  .submit-button {
-    width: 100%;
-    padding: 10px;
-    background: #6c63ff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .submit-button.loading {
-    background-color: #f0ad4e;
-    cursor: not-allowed;
-  }
-  
-  .submit-button.success {
-    background-color: #5cb85c;
-  }
-  
-  .submit-button.error {
-    background-color: #d9534f;
-  }
-  
-  .submit-button:disabled {
-    cursor: not-allowed;
-  }
-  
-  .optimized-price {
-    background: #dff0d8;
-    padding: 20px;
-    border-radius: 4px;
-    color: #3c763d;
-    text-align: left;
-    width: 45%;
-    margin-left: 20px;
-  }
-  
-  .optimized-price h2 {
-    margin: 0 0 10px 0;
-  }
-  
-  .error-message {
-    margin-top: 20px;
-    background: #f2dede;
-    padding: 20px;
-    border-radius: 4px;
-    color: #a94442;
-    text-align: center;
-    width: 100%;
-  }
-  
+  background-image: url('../images/back2.jpg');
+  background-size: cover;
+  background-position: center; 
+  height: 110vh; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  padding: 20px;
+  color:#ffffff;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.optimization-form-container {
+  margin-top: 20px;
+}
+
+.optimization-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-column {
+  flex: 1;
+  margin: 10px;
+  color: #ffffff;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.submit-button {
+  background-color: #fca311;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button.loading {
+  background-color: #FFC107;
+}
+
+.submit-button.success {
+  background-color: #4CAF50;
+}
+
+.submit-button.error {
+  background-color: #F44336;
+}
+
+.optimized-price {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+.optimized-price h2 {
+  margin-bottom: 20px;
+}
+
+.price-section {
+  margin-bottom: 20px;
+}
+
+.price-section h3 {
+  margin-bottom: 10px;
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+}

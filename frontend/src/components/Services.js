@@ -13,14 +13,12 @@ const Services = () => {
             <p>- Ahorro de costos<br />- Aumento de ventas</p>
           </div>
           <div className="service-item">
-            <h3>Testimonios de usuarios</h3>
-            <p>Desde que comenzamos a utilizar la aplicación de optimización de precios basada en IA, hemos visto un incremento significativo en nuestras ventas y una reducción en los costos operativos.</p>
-            <p>– Joseph Bennett, Jul 27, 2022</p>
+            <h3>Predicción de Precios</h3>
+            <p>OptiPredict ofrece una herramienta avanzada de Predicción de Precios que utiliza inteligencia artificial para determinar el precio óptimo de tus productos en el mercado. Aprovechando características específicas de cada producto, nuestra solución te ayuda a maximizar tus ingresos y asegurar que tus precios sean competitivos y atractivos para los clientes. Con Predicción de Precios de OptiPredict, puedes tomar decisiones informadas que incrementarán tus ventas y mejorarán tu rentabilidad, todo mientras ahorras tiempo y esfuerzo en análisis manuales.</p>
           </div>
           <div className="service-item">
-            <h3>Casos de Éxito</h3>
-            <p>Implementamos nuestro software en un negocio y en solo tres meses logramos aumentar nuestras ventas en un 20% y reducir los costos de inventario en un 15%.</p>
-            <p>La inteligencia artificial nos permitió ajustar precios de manera dinámica, respondiendo rápidamente a las tendencias del mercado y mejorando la satisfacción del cliente.</p>
+            <h3>Predicción de Precio</h3>
+            <p>Es una herramienta esencial para cualquier vendedor que desee anticipar la demanda y optimizar su inventario. Utilizando avanzadas técnicas de machine learning, nuestra herramienta analiza patrones históricos de ventas y factores externos para proporcionar predicciones precisas y confiables. Esto te permite planificar con anticipación, minimizar el riesgo de exceso de inventario o desabastecimiento y alinear tus estrategias de marketing y producción con las expectativas del mercado. Con Predicción de Ventas, estarás un paso adelante, asegurando que siempre estás preparado para satisfacer las demandas de tus clientes y maximizar tus oportunidades de ventas.</p>
           </div>
         </div>
       </div>

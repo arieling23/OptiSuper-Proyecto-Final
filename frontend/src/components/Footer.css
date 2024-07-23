@@ -1,34 +1,83 @@
 footer {
   background-color: #282c34;
   color: white;
-  padding: 5px; /* Padding reducido para disminuir la altura total */
+  padding: 20px;
+  font-size: 14px;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-section {
   flex: 1;
-  padding: 2px; /* Padding interno reducido */
+  min-width: 150px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.footer-section p, .footer-section h4 {
-  font-size: 0.8em; /* Tamaño de fuente reducido */
-  margin-bottom: 5px; /* Espacio entre elementos reducido */
+.footer-section.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-section img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.footer-section input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.footer-section button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.footer-section button:hover {
+  background-color: #45a049;
 }
 
 .footer-bottom {
   text-align: center;
-  padding: 5px; /* Padding reducido en el texto del fondo */
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #444;
 }
 
-.auth-buttons {
-  display: flex;
-}
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.auth-buttons .signup, .auth-buttons .signin {
-  margin: 0 10px;
+  .footer-section {
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
