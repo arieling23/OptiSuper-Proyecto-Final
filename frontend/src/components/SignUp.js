@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../api';
 import './SignUp.css';
-import logo from '../images/logo1.jpg';
+import logo from '../images/logo4.png';
 
 const SignUp = () => {
   const [username, setUsername] = useState('');

@@ -3,11 +3,12 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f8f9fa;
+    background-image: url('../images/back1.jpg');
+    background-size: cover;;
 }
 
 .signup-form {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.7);
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -16,8 +17,11 @@
 }
 
 .signup-logo {
-    height: 80px;
-    margin-bottom: 20px;
+    width: 400px;
+    height: 150px; /* Ajusta este valor al tamaño deseado para la altura */
+    margin-top: 0px; /* Ajusta este valor para aumentar el espacio encima del elemento */
+    margin-bottom: 0px; /* Ajusta este valor para aumentar el espacio debajo del elemento */
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
 }
 
 .social-button {

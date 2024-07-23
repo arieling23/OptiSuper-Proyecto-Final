@@ -5,9 +5,12 @@
   }
   
   .services h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-family: "Bebas Neue", sans-serif;
+}
+
   
   .services-content {
     display: flex;

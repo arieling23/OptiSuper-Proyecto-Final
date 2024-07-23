@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../api';
 import { AuthContext } from '../context/AuthContext';
 import './Login.css';
-import logo from '../images/logo1.jpg';
+import logo from '../images/logo4.png';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -66,7 +66,7 @@ const Login = () => {
           </label>
           <button type="submit">Iniciar sesión</button>
         </form>
-        <a href="/reset_password">¿Olvidaste tu contraseña?</a>
+        <a href="/reset_password" className="forgot-password-link">¿Olvidaste tu contraseña?</a>
         <p>¿No tienes una cuenta? <a href="/signup">Regístrate</a></p>
         
         <button onClick={handleBackToHome} className="back-to-home">Volver a la página principal</button>
@@ -75,4 +75,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login;
